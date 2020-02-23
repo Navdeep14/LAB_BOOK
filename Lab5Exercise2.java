@@ -1,4 +1,4 @@
-package JAVA;
+package demo;
 
 public class Lab5Exercise2 {
 
@@ -12,7 +12,7 @@ public class Lab5Exercise2 {
 	       
 	    public static void main (String args[]) 
 	    { 
-	    int n = 8; 
+	    int n = 9; 
 	    System.out.println(fib(n)); 
 	    } 
 	

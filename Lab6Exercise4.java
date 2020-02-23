@@ -1,36 +1,30 @@
-package JAVA;
+package demo;
 
 public class Lab6Exercise4 {
-public static void main(String[] args) {
-	String s="JAVA";
-	System.out.println(alterString(s));
-}
-public  static String alterString(String s) {
-	String x = "";
-	for(int i=0;i<s.length();i++) {
-		
-		char ch;
-		ch=s.charAt(i);
-		{
-		if(ch!='a'&&ch!='e'&&ch!='i'&&ch!='o'&&ch!='u'&&
-				ch!='A'&&ch!='E'&&ch!='I'&&ch!='O'&&ch!='U') {
-			x=x+(char)(ch+1);
-			
-		}
-		
-		else {
-	    x=x+ch;
-		}
-		
-			
-	}
-		
-			
-
 	
-			
-}
-return x;
-}
+	public static void main(String[]args)
+	{
+		
+		String x="JAVA";
+		System.out.print(alterString(x));
+	}
+	public static String alterString(String n) 
+	{ 
+		String x="";
+		for (int i=0;i<n.length();i++)
+		{
+			 if(n.charAt(i)=='a' || n.charAt(i)=='e' || n.charAt(i)=='i' || n.charAt(i)=='o' || n.charAt(i)=='u' || 
+					 n.charAt(i)=='A' || n.charAt(i)=='E' || n.charAt(i)=='I' || n.charAt(i)=='O' || n.charAt(i)=='U')
+			 {
+				 x=x+n.charAt(i);
+			 }
+			 else
+			 {
+				 x=x+(char)(n.charAt(i)+1);
+			 }
+		}
+		return x;
+		
+	}
 
 }
