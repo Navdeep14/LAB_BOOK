@@ -1,0 +1,13 @@
+package Lab10;
+
+public class Exercise4Main {
+	public static void main(String[] args) {
+		IExercise4 experiment = Exercise4::showDetails;
+		Exercise4 experiment1 = experiment.showDetails();
+		
+		experiment1.setName("harsh");
+		experiment1.setId("1010");
+		
+		System.out.println("Id :"+experiment1.getId()+" "+"Name :"+experiment1.getName());
+	}
+}

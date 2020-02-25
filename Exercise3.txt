@@ -1,0 +1,15 @@
+package Lab10;
+import java.util.function.*;
+public class Exercise3 {
+	public static void main(String[] args) {
+		String username="Harsh",password="12345";
+		
+		BiPredicate<String,String>predicate = (user,pass)->{
+			if(user.equals(username)&&pass.equals(password)) {
+				return true;
+			}
+			else
+				return false;
+		};
+	}
+}

@@ -1,0 +1,36 @@
+package Lab10;
+
+public class Exercise4 {
+	
+	private String id;
+	private String name;
+	
+	public Exercise4(){
+		this(" "," ");
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Exercise4(String id,String name) {
+		this.id=id;
+		this.name=name;
+	}
+	
+	public static Exercise4 showDetails() {
+		return new Exercise4();
+	}
+}

@@ -1,0 +1,5 @@
+package Lab10;
+
+public interface IExercise4 {
+	Exercise4 showDetails();
+}
