@@ -1,0 +1,47 @@
+package com.cg.eis.pl;
+
+import com.cg.eis.bean.Employee;
+import com.cg.eis.dao.EmployeeDao;
+import com.cg.eis.service.EmployeeService;
+import com.cg.eis.service.IEmployeeService;
+import java.util.*;
+
+public class EmployeeUI {
+	private IEmployeeService service = new EmployeeService(new EmployeeDao());
+	public static void main() {
+		 EmployeeUI ui = new EmployeeUI();
+		 ui.execute();
+	}
+	
+	public void execute() {
+		try {
+			Employee employee1 = new Employee("101","Harsh", 44400,"Manager");
+			Employee employee2 = new Employee("102","Rahul", 25000,"Programmer");
+			
+			service.getEmployeeDetails(employee1);
+			service.getEmployeeDetails(employee2);
+			
+			String scheme = service.getInsuranceScheme("101");
+			displayScheme(scheme);
+			
+			Set<Employee> employees = service.displayDetails();
+            printAllDetails(employees);
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+		 
+		void printAllDetails(Collection<Employee> employees) {
+	        for (Employee e : employees) {
+	            System.out.println("Id :"+e.getId()+" "+"Name :"+e.getName()+" "+"Designation :"+e.getDesignation()+" "+"Insurace Scheme :"
+	            		+e.getInsuranceScheme()+" "+"Salary :"+e.getSalary());
+	        }
+	    }
+		
+		void displayScheme(String string) {
+			System.out.println("Scheme is :"+string);
+		}
+		
+	}
+
