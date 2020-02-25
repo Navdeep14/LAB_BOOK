@@ -1,0 +1,13 @@
+package com.cg.eis.service;
+
+import java.util.*;
+
+import com.cg.eis.bean.Employee;
+
+public interface IEmployeeService {
+	void getEmployeeDetails(Employee e);
+	void setScheme(String id);
+	String getInsuranceScheme(String id);
+	Set<Employee> displayDetails();
+	
+}

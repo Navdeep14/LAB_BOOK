@@ -1,0 +1,40 @@
+package com.cg.eis.service;
+
+import java.util.Set;
+
+import com.cg.eis.bean.Employee;
+import com.cg.eis.dao.IEmployeeDao;
+
+public class EmployeeService implements IEmployeeService {
+
+	private IEmployeeDao dao;
+
+    public EmployeeService(IEmployeeDao dao) {
+        this.dao = dao;
+    }
+    
+	@Override
+	public void getEmployeeDetails(Employee e) {
+		dao.getEmployeeDetails(e);
+		
+	}
+
+	@Override
+	public void setScheme(String id) {
+		dao.setScheme(id);
+		
+	}
+
+	@Override
+	public String getInsuranceScheme(String id) {
+		String scheme = dao.getInsuranceScheme(id);
+		return scheme;
+	}
+
+	@Override
+	public Set<Employee> displayDetails() {
+		Set<Employee> employees = dao.displayDetails();
+        return employees;
+	}
+
+}
