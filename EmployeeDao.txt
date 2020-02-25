@@ -1,0 +1,48 @@
+package com.cg.eis.dao;
+
+import java.util.*;
+
+import com.cg.eis.bean.Employee;
+
+public class EmployeeDao implements IEmployeeDao {
+	public  Map<String, Employee> store = new HashMap<>();
+	
+	@Override
+	public void getEmployeeDetails(Employee e) {
+		store.put(e.getId(), e);
+		
+	}
+
+	@Override
+	public void setScheme(String id) {
+		Employee e = store.get(id);
+		if((e.getSalary()>5000 && e.getSalary()<20000) || e.getDesignation().equals("System Associate")) {
+			e.setInsuranceScheme("Scheme C");
+		}
+		else if((e.getSalary()>=20000 && e.getSalary()<40000)|| e.getDesignation().equals("Programmer")) {
+			e.setInsuranceScheme("Scheme B");
+		}
+		
+		else if((e.getSalary()>=40000)||e.getDesignation().equals("Manager")) {
+			e.setInsuranceScheme("Scheme A");
+		}
+		else if((e.getSalary()<5000)||e.getDesignation().equals("Clerk")) {
+			e.setInsuranceScheme(null);
+		}
+	}
+
+	@Override
+	public String getInsuranceScheme(String id) {
+		Employee e = store.get(id);
+		String scheme = e.getInsuranceScheme();
+		return scheme;
+	}
+
+	@Override
+	public Set<Employee> displayDetails() {
+		Collection<Employee> employees = store.values();
+        Set<Employee> employeeSet = new HashSet<>(employees);
+        return employeeSet;
+	}
+
+}
